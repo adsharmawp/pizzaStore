@@ -1,0 +1,34 @@
+{
+  "PizzaList": [
+    {
+      "Name": "The Unthinkable Pizza",
+      "imagePath": "Images/PIZ0167.jpg",
+      "Cost": "300"
+    },
+    {
+      "Name": "Margherita",
+      "imagePath": "Images/PIZ0168.jpg",
+      "Cost": "250"
+    },
+    {
+      "Name": "Farmhouse",
+      "imagePath": "Images/PIZ0169.jpg",
+      "Cost": "375"
+    },
+    {
+      "Name": "Peppy Paneer",
+      "imagePath": "Images/PIZ0170.jpg",
+      "Cost": "300"
+    },
+    {
+      "Name": "Veg Extravaganza",
+      "imagePath": "Images/PIZ0171.jpg",
+      "Cost": "250"
+    },
+    {
+      "Name": "Veggie Paradise",
+      "imagePath": "Images/PIZ0172.jpg",
+      "Cost": "375"
+    }
+  ]
+}

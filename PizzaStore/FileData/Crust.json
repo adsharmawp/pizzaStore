@@ -1,0 +1,16 @@
+{
+  "CrustList": [
+    {
+      "Name": "Classic",
+      "Cost": 0
+    },
+    {
+      "Name": "New Hand Tossed",
+      "Cost": 50
+    },
+    {
+      "Name": "Fresh Pan Pizza",
+      "Cost": 50
+    }
+  ]
+}

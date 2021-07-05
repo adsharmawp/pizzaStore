@@ -1,0 +1,59 @@
+<h1 id="tableLabel">BESTSELLERS</h1>
+
+<p *ngIf="!pizzaList"><em>Loading...</em></p>
+
+
+
+
+<table>
+  <tr>
+    <td>
+      <div *ngFor="let pizza of pizzaList" style="float: left; border:1px solid; padding: 10px; margin: 10px;">
+        <img src="{{pizza.imagePath}}" style="height:100px; width:250px" /><br />
+        <b><i>{{ pizza.name }} [{{pizza.cost}} Rs.]</i></b><br /><br />
+        Crust: 
+        <select [(ngModel)]="selectedCrust"  ><!--(change)="onCrustChange($event)"-->
+          <option *ngFor="let crust of crustList">{{crust.name}} </option>
+        </select>
+
+        <br /><br/>
+        <b>Topping:</b>
+        <div *ngFor="let topping of toppingList">
+          <input type="checkbox" (click)="addTopping(pizza, topping)" /> {{topping.name}}  : {{topping.cost}} Rs.
+        </div>
+        ==================<br />
+        <b>Total Cost:</b>
+        {{pizza.costWithTopping}} Rs.<br />
+        ==================<br />
+        <div style="float:right;">
+          <button (click)="removeItem(pizza)">-</button> {{ pizza.count }} <button (click)="addItem(pizza)">+</button>
+        </div>
+      </div>
+    </td>
+    <td>
+      <div style="border: 1px solid blue; height: 300px; width: 300px;">
+        <div *ngIf="!showTotal()">
+          <b>Cart</b><br/>
+          No Pizza Added Yet!
+        </div>
+        <div *ngFor="let pizza of pizzaList" >
+          <div *ngIf="pizza.count > 0">
+            <table>
+              <tr>
+                <td style="width: 200px"><b>{{ pizza.name }} ({{pizza.count}})</b></td>
+                <td>{{ pizza.costWithTopping * pizza.count }}</td>
+              </tr>
+            </table>
+          </div>
+        </div>
+        <div *ngIf="showTotal()">
+          ==================<br />
+          Total Amount : {{totalAmount()}}<br/><br/>
+          <button class="btn-primary" style="margin: 10px">Place Order</button>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+
